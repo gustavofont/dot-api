@@ -8,7 +8,9 @@ export default [
   {
     rules: {
       semi: ['error', 'always'],
-      quotes: ['error', 'single']
+      quotes: ['error', 'single'],
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-explicit-any': 0
     }
   }
 ];

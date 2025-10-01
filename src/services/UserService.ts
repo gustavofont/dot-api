@@ -3,13 +3,14 @@ import { AppDataSource } from 'data-source';
 import { CreateUserDto, RequestResponse } from 'types';
 import apiResponse from 'utils/APIResponse';
 import bcrypt from 'bcrypt';
+import { Repository } from 'typeorm';
 
-export default class UserService {
+class UserService {
     constructor() {
         this.userRepository = AppDataSource.getRepository(UserModel);
     }
 
-    private userRepository;
+    private userRepository : Repository<UserModel>;;
 
     async createUser(userData: CreateUserDto) : Promise<RequestResponse> {
         try {
@@ -22,5 +23,8 @@ export default class UserService {
         }
     }
 } 
+
+
+export default new UserService;
 
 

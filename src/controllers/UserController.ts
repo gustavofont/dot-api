@@ -1,9 +1,7 @@
 import { Router, Request, Response } from 'express';
-import UserService from 'services/UserService';
+import userService from 'services/UserService';
 
 const UserRouter = Router();
-
-const userService = new UserService;
 
 UserRouter.post('/', async (req:Request, res: Response) => {
     const userData = req.body;

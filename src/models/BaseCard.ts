@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { CollectionModel } from './Colletion';
 import { RarityModel } from './Rarity';
 
@@ -11,8 +11,10 @@ export class BaseCardModel {
   name: string;
 
   @ManyToOne(() => CollectionModel, (collection) => collection.baseCards, { nullable: false })
+  @JoinColumn({ name: 'collection' })
   collection: CollectionModel;
 
   @ManyToOne(() => RarityModel, (rarity) => rarity.baseCards, { nullable: false })
-  rarity: RarityModel;
+  @JoinColumn({ name: 'rarity' })
+  rarity: number;
 }

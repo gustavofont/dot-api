@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, Column, JoinColumn } from 'typeorm';
 import { BaseCardModel } from './BaseCard';
 import { UserModel } from './User';
 
@@ -8,13 +8,16 @@ export class CardModel {
   id: number;
 
   @ManyToOne(() => BaseCardModel, { nullable: false })
-  baseCard: BaseCardModel;
+  @JoinColumn({ name: 'baseCard' })
+  baseCard: number;
 
   @ManyToOne(() => UserModel, { nullable: false })
-  owner: UserModel;
+  @JoinColumn({ name: 'owner' })
+  owner: number;
 
   @ManyToOne(() => UserModel, { nullable: false })
-  pulledBy: UserModel;
+  @JoinColumn({ name: 'pulledBy' })
+  pulledBy: number;
 
   @Column({ type: 'float', nullable: true })
   floatValue: number;

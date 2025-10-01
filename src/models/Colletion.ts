@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { BaseCardModel } from './BaseCard';
 
-@Entity('collections')
+@Entity('collection')
 export class CollectionModel {
   @PrimaryGeneratedColumn()
   id: number;

@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/main.ts",
+    "lint": "eslint . --ext .ts",
     "dev": "nodemon" 
   },
   "keywords": [],

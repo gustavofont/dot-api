@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeor
 
 
 @Entity('user')
-export default class UserModel {
+export class UserModel {
   @PrimaryGeneratedColumn()
   id: number;
 

@@ -1,7 +1,7 @@
-import UserModel from 'models/UserModel';
+import { UserModel } from 'models/User';
 import { AppDataSource } from 'data-source';
 import { CreateUserDto, RequestResponse } from 'types';
-import apiResponse from 'utils/APIResponse';
+import apiResponse from 'utils/apiResponse';
 import bcrypt from 'bcrypt';
 import { Repository } from 'typeorm';
 

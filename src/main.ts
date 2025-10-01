@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {Response, Request} from 'express';
 import routes from './controllers';
 import 'reflect-metadata';
 import { AppDataSource } from './data-source';
@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 3000;
 
 AppDataSource.initialize();
 

@@ -1,10 +1,10 @@
 import { AppDataSource } from 'data-source';
-import UserModel from 'models/UserModel';
+import { UserModel } from 'models/User';
 import { Repository } from 'typeorm';
 import { RequestResponse } from 'types';
-import apiResponse from 'utils/APIResponse';
+import apiResponse from 'utils/apiResponse';
 import bcrypt from 'bcrypt';
-import jwt, { SignOptions } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 class AuthService {
     constructor() {
